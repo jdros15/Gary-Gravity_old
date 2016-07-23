@@ -67,6 +67,7 @@ build/
 *.dll
 *.cginc
 /Library/*
+/Temp/*
 
 # Visual C++ cache files
 ipch/
