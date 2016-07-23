@@ -45,6 +45,28 @@ build/
 *.pidb
 *.log
 *.scc
+*.png
+*.mp3
+*.wav
+*.bin
+*.prefab
+*.anim
+*.fbx
+*.mat
+*.controller
+*.csproj
+*.ttf
+*.fon
+*.unity
+*.asset
+*.psd
+*.jpg
+*.shader
+*.sln 
+*.mdb
+*.dll
+*.cginc
+/Library/*
 
 # Visual C++ cache files
 ipch/
