@@ -5,12 +5,13 @@ public class SwipeMovement : MonoBehaviour {
 	public string currentLane;
 	public GameObject target1,target2,target3,protag;
 	public Vector3 targetPosition,currentPosition;
-	public float speed;
+	public float upSpeed,sideSpeed;
+    public static bool moveUp;
 	// Use this for initialization
 	void Start () {
 		currentLane = "Lane2";
 		targetPosition = target2.transform.position;
-
+        moveUp = true;
 	}
 	
 	// Update is called once per frame
@@ -31,13 +32,14 @@ public class SwipeMovement : MonoBehaviour {
 				if (currentLane == "Lane2") {
 					currentLane = "Lane3";
 					targetPosition = target3.transform.position;
-				
+                  
 				}
 				if (currentLane == "Lane1") {
 					currentLane = "Lane2";
 					targetPosition = target2.transform.position;
+                  
 				}
-
+                moveUp = false;
 			}else if (touchDeltaPosition.x < -1)
 			{
 				//SwipeLeft
@@ -49,11 +51,18 @@ public class SwipeMovement : MonoBehaviour {
 					currentLane = "Lane2";
 					targetPosition = target2.transform.position;
 				}
-			
+                moveUp = false;
 			}
 
 		}
-		MoveTowardsTarget ();
+        if (moveUp == true)
+        {
+            protag.transform.Translate(protag.transform.up * Time.deltaTime * upSpeed, Space.Self); 
+        }
+        else
+        {
+            MoveTowardsTarget();
+        }
 	}
 	private void MoveTowardsTarget() {
 		//the speed, in units per second, we want to move towards the target
@@ -72,12 +81,13 @@ public class SwipeMovement : MonoBehaviour {
 			directionOfTravel.Normalize();
 			//scale the movement on each axis by the directionOfTravel vector components
 
-			protag.transform.Translate(protag.transform.up * Time.deltaTime * speed, Space.Self); 
-			/*protag.transform.Translate(
-				(directionOfTravel.x * speed * Time.deltaTime),
-				(directionOfTravel.y * speed * Time.deltaTime),
-				(directionOfTravel.z * speed * Time.deltaTime),
-				Space.World);*/
+			
+			protag.transform.Translate(
+				(directionOfTravel.x * sideSpeed * Time.deltaTime),
+                (directionOfTravel.y * sideSpeed * Time.deltaTime),
+                (directionOfTravel.z * sideSpeed * Time.deltaTime),
+				Space.World);
 		}
 	}
+   
 }
