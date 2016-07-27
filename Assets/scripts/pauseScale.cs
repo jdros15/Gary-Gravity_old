@@ -2,9 +2,9 @@
 using System.Collections;
 using UnityEngine.UI;
 
-public class PauseGame : MonoBehaviour {
+public class pauseScale : MonoBehaviour {
 
-    public float timeScale;
+
 	Camera cam;
 	//private Blur Blurscript;
 	// Use this for initialization
@@ -22,4 +22,11 @@ public class PauseGame : MonoBehaviour {
 	
 
 	}
+    public void Playgame()
+    {
+        Time.timeScale = 1f;
+        cam.SendMessage("TurnBlurOff");
+
+
+    }
 }
