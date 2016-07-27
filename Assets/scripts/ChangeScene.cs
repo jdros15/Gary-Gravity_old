@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 
 public class ChangeScene : MonoBehaviour {
@@ -27,7 +28,8 @@ public class ChangeScene : MonoBehaviour {
 
 	}
 	void GoToScene(){
-		Application.LoadLevel (GoTo);
+		
+        SceneManager.LoadScene(GoTo);
 	}
 
 
