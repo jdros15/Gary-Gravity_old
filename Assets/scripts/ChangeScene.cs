@@ -9,7 +9,7 @@ public class ChangeScene : MonoBehaviour {
 	public string GoTo;
 	public float waitTime;
 	public GameObject fader,buttons;
-	Animator animation,slide;
+	Animator anim,slide;
 	// Use this for initialization
 	void Start () {
 		
@@ -20,9 +20,9 @@ public class ChangeScene : MonoBehaviour {
 	
 	}
 	public void changeScene(){
-		animation = fader.GetComponent<Animator> ();
+        anim = fader.GetComponent<Animator>();
 		slide = buttons.GetComponent<Animator> ();
-		animation.SetBool("FadeIn",true);
+        anim.SetBool("FadeIn", true);
 		slide.SetBool ("SlideOut", true);
 		Invoke ("GoToScene", waitTime);
 
