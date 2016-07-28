@@ -3,9 +3,9 @@ using System.Collections;
 
 public class SwipeMovement : MonoBehaviour {
 	public string currentLane;
-	public GameObject target1,target2,target3,protag;
+	public GameObject target1,target2,target3,protag,charMesh;
 	public Vector3 targetPosition,currentPosition;
-	public float upSpeed,sideSpeed;
+	public float upSpeed,sideSpeed,angleLeft,angleRight;
     public static bool moveUp;
 	// Use this for initialization
 	void Start () {
@@ -29,6 +29,7 @@ public class SwipeMovement : MonoBehaviour {
 			if (touchDeltaPosition.x > 1)
 			{
 				//SwipeRight
+                tiltRight();
 				if (currentLane == "Lane2") {
 					currentLane = "Lane3";
 					targetPosition = target3.transform.position;
@@ -43,6 +44,7 @@ public class SwipeMovement : MonoBehaviour {
 			}else if (touchDeltaPosition.x < -1)
 			{
 				//SwipeLeft
+                tiltLeft();
 				if (currentLane == "Lane2") {
 					currentLane = "Lane1";
 					targetPosition = target1.transform.position;
@@ -89,5 +91,14 @@ public class SwipeMovement : MonoBehaviour {
 				Space.World);
 		}
 	}
+
+    void tiltLeft()
+    {
+        charMesh.transform.Rotate(Vector3.back * angleLeft);
+    }
+    void tiltRight()
+    {
+        charMesh.transform.Rotate(Vector3.back * angleRight);
+    }
    
 }
