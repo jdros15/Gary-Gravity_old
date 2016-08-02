@@ -66,6 +66,10 @@ build/
 *.mdb
 *.dll
 *.cginc
+*.physicMaterial
+*.tga
+*.bmp
+*.spm
 /Library/*
 /Temp/*
 
