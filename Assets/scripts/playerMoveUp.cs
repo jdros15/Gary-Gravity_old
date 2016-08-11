@@ -15,6 +15,7 @@ public class playerMoveUp : MonoBehaviour {
 
     void OnTriggerEnter(Collider moveUp)
     {
+        //protag.transform.rotation = Quaternion.AngleAxis(90, Vector3.up);
         if (moveUp.gameObject.CompareTag("Player"))
         {
             SwipeMovement.moveUp = true;

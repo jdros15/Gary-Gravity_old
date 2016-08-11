@@ -3,10 +3,11 @@ using System.Collections;
 
 public class SwipeMovement : MonoBehaviour {
 	public string currentLane;
-	public GameObject target1,target2,target3,protag,charMesh;
+	public GameObject target1,target2,target3,protag,charMesh,smokeTrail;
 	public Vector3 targetPosition,currentPosition;
 	public float upSpeed,sideSpeed,angleLeft,angleRight;
     public static bool moveUp;
+    public float rotateQuat=90;
 	// Use this for initialization
 	void Start () {
 		currentLane = "Lane2";
@@ -19,7 +20,7 @@ public class SwipeMovement : MonoBehaviour {
 	void Update() {
 
 
-
+        protag.transform.rotation = Quaternion.AngleAxis(rotateQuat, Vector3.up);
 		if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Moved) {
 			// Get movement of the finger since last frame
 			Vector2 touchDeltaPosition = Input.GetTouch(0).deltaPosition;
@@ -29,29 +30,33 @@ public class SwipeMovement : MonoBehaviour {
 			if (touchDeltaPosition.x > 1)
 			{
 				//SwipeRight
-                tiltRight();
+                
 				if (currentLane == "Lane2") {
 					currentLane = "Lane3";
 					targetPosition = target3.transform.position;
+                    tiltRight();
                   
 				}
 				if (currentLane == "Lane1") {
 					currentLane = "Lane2";
 					targetPosition = target2.transform.position;
+                    tiltRight();
                   
 				}
                 moveUp = false;
 			}else if (touchDeltaPosition.x < -1)
 			{
 				//SwipeLeft
-                tiltLeft();
+               
 				if (currentLane == "Lane2") {
 					currentLane = "Lane1";
 					targetPosition = target1.transform.position;
+                    tiltLeft();
 				}
 				if (currentLane == "Lane3") {
 					currentLane = "Lane2";
 					targetPosition = target2.transform.position;
+                    tiltLeft();
 				}
                 moveUp = false;
 			}
@@ -59,10 +64,12 @@ public class SwipeMovement : MonoBehaviour {
 		}
         if (moveUp == true)
         {
+            Invoke("disablesmoketrail", 2);
             protag.transform.Translate(protag.transform.up * Time.deltaTime * upSpeed, Space.Self); 
         }
         else
         {
+
             MoveTowardsTarget();
         }
 	}
@@ -94,11 +101,17 @@ public class SwipeMovement : MonoBehaviour {
 
     void tiltLeft()
     {
+        smokeTrail.SetActive(true);
         charMesh.transform.Rotate(Vector3.back * angleLeft);
     }
     void tiltRight()
     {
-        charMesh.transform.Rotate(Vector3.back * angleRight);
+        smokeTrail.SetActive(true);
+        charMesh.transform.Rotate(Vector3.forward * angleRight);
     }
-   
+
+    void disablesmoketrail()
+    {
+        smokeTrail.SetActive(false);
+    }
 }
