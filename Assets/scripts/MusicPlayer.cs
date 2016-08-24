@@ -4,6 +4,8 @@ using System.Collections;
 public class MusicPlayer : MonoBehaviour {
     public GameObject intro,loop;
     private AudioSource introMusic,loopMusic;
+    
+
 	// Use this for initialization
 	void Start () {
        introMusic = intro.GetComponent<AudioSource>();
@@ -12,6 +14,7 @@ public class MusicPlayer : MonoBehaviour {
         {
             introMusic.Play();
             Invoke("PlayMusic", 12);
+         
         }
 
 	}
