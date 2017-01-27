@@ -16,7 +16,7 @@ public class loadALevel : MonoBehaviour {
 
    public void loadNow()
     {
-//Application.LoadLevel(levelName);
+        Time.timeScale = 1.0f;
         SceneManager.LoadScene(GoTo);
     }
 }

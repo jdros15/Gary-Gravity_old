@@ -70,6 +70,14 @@ build/
 *.tga
 *.bmp
 *.spm
+*.txt
+*.tif
+*.exr
+*.rtf
+*.md
+*.ogg
+*.rar
+*.blend1
 /Library/*
 /Temp/*
 

@@ -15,13 +15,13 @@ public class PlayerControllerScript : MonoBehaviour
     public float firstLaneXPos = 0;
     public float deadZone = 0.1f;
     public float sideSpeed = 5;
-
+    public CharacterController controller;
 
     void Update()
     {
         //Access the objects Character Controller
-        CharacterController controller = GetComponent<CharacterController>();
-
+        controller = this.gameObject.GetComponent<CharacterController>();
+        controller.detectCollisions = false;
         float input = Input.GetAxis("Horizontal");
         //Make sure the object is grounded before doing the math for lane changes
         if (controller.isGrounded)
