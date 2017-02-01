@@ -3460,7 +3460,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 104242, guid: f77bdeb5ef0a8904e81ff370b1a502c2, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 11423446, guid: f77bdeb5ef0a8904e81ff370b1a502c2, type: 2}
       propertyPath: m_PreserveAspect
@@ -4960,7 +4960,7 @@ GameObject:
   - 222: {fileID: 706465215}
   - 114: {fileID: 706465214}
   m_Layer: 5
-  m_Name: Item_9
+  m_Name: boost10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7098,13 +7098,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 443c2889df5af534b8bbbc9c34f5099e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: 
+  itemName: Boost
   itemPrice: 10
   playerGold: 0
-  itemTime: 0
+  itemTime: 10
   curGold: {fileID: 1114345924}
-  printTime: {fileID: 0}
-  _printTime: {fileID: 0}
+  printTime: {fileID: 1851319069}
+  _printTime: {fileID: 1851319068}
 --- !u!114 &1058241581
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10405,7 +10405,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1546417258
 MonoBehaviour:
   m_ObjectHideFlags: 0
