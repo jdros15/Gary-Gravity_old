@@ -51,6 +51,7 @@ public class BuyItem : MonoBehaviour {
                     }
 
                     printTime.itmTime = itemTime;
+                    printTime.itemName = itemName;
                     printTime.iprintna();
                 
        

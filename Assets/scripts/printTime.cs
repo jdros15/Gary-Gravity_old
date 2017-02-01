@@ -12,8 +12,9 @@ public class PrintTime : MonoBehaviour
     DateTime currentDate;
     DateTime oldDate;
     public Text timerBoost,timerAttack,timerShield;
+    public string itemName;
     TimeSpan timeLeftBoost;
-    DateTime endTimeBoost,curTime;
+    DateTime endTime,curTime;
     public double itmTime;
     long temp;
     void Start()
@@ -59,13 +60,11 @@ public class PrintTime : MonoBehaviour
             //PlayerPrefs.SetString("")
         }
 
-        if (PlayerPrefs.HasKey("endTimeBoost"))
+        if (PlayerPrefs.HasKey("endTime"+itemName))
         {
-
-            string dT = PlayerPrefs.GetString("endTimeBoost");
-            endTimeBoost = Convert.ToDateTime(dT);
-            print(endTimeBoost);
-
+            string dT = PlayerPrefs.GetString("endTime"+itemName);
+            endTime = Convert.ToDateTime(dT);
+         //   print(endTimeBoost);
 
         }
     }
@@ -74,7 +73,7 @@ public class PrintTime : MonoBehaviour
     {
        
         curTime = System.DateTime.Now;
-        timeLeftBoost = endTimeBoost - curTime;
+        timeLeftBoost = endTime - curTime;
         var secsLeftBoost = timeLeftBoost.TotalSeconds;
 
       //  print("Total Hours: " + secsLeftBoost.ToString());
@@ -123,7 +122,7 @@ public class PrintTime : MonoBehaviour
       TimeSpan ts1 = DateTime.Now.TimeOfDay;
       var ts2 = ts1.Add(time1);
       string op = String.Format("{0:D2}:{1:D2}:{2:D2}", ts2.Hours, ts2.Minutes,ts2.Seconds);
-      PlayerPrefs.SetString("endTimeBoost", op);
+      PlayerPrefs.SetString("endTime"+itemName, op);
       print("OPPA: "+op);
       
       refreshTime();
