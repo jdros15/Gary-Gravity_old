@@ -215,6 +215,7 @@
     <Compile Include="Assets\scripts\PlayerSpawn.cs" />
     <Compile Include="Assets\scripts\PrintTimeAttack.cs" />
     <Compile Include="Assets\scripts\PrintTimeBoost.cs" />
+    <Compile Include="Assets\scripts\PrintTimeShield.cs" />
     <Compile Include="Assets\scripts\RateApp.cs" />
     <Compile Include="Assets\scripts\RdmObjGen.cs" />
     <Compile Include="Assets\scripts\ScrollRectSnap_CS.cs" />

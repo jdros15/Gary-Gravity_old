@@ -11,6 +11,7 @@ public class BuyItem : MonoBehaviour {
   //  public string itmTime;
     public PrintTimeBoost printTimeBoost;
     public PrintTimeAttack printTimeAttack;
+    public PrintTimeShield printTimeShield;
     public GameObject _printTime;
     PlayerGold pGold;
 
@@ -65,6 +66,13 @@ public class BuyItem : MonoBehaviour {
                         printTimeAttack.itmTime = itemTime;
                         printTimeAttack.itemName = itemName;
                         printTimeAttack.iprintna();
+                    }
+                    else
+                    {
+                        printTimeShield = _printTime.GetComponent<PrintTimeShield>();
+                        printTimeShield.itmTime = itemTime;
+                        printTimeShield.itemName = itemName;
+                        printTimeShield.iprintna();
                     }
        
                 //decrease price from gold
