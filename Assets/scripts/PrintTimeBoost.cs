@@ -5,13 +5,13 @@ using UnityEngine.UI;
 using System.Collections.Generic;
 using UnityEngine.Analytics;
 
-public class PrintTime : MonoBehaviour
+public class PrintTimeBoost : MonoBehaviour
 {
 
 
     DateTime currentDate;
     DateTime oldDate;
-    public Text timerBoost,timerAttack,timerShield;
+    public Text timerBoost;
     public string itemName;
     TimeSpan timeLeftBoost;
     DateTime endTime,curTime;

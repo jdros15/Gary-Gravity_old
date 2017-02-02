@@ -8,8 +8,9 @@ public class BuyItem : MonoBehaviour {
     public double itemTime;
     private double tempItemTime = 0;
     public Text curGold;
-    //public string itmTime;
-    public PrintTime printTime;
+  //  public string itmTime;
+    public PrintTimeBoost printTimeBoost;
+    public PrintTimeAttack printTimeAttack;
     public GameObject _printTime;
     PlayerGold pGold;
 
@@ -18,9 +19,10 @@ public class BuyItem : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        _printTime = GameObject.Find("timerPrinter");
+        _printTime = GameObject.Find("timerPrinter"+itemName);
       //  gameObject.SendMessage("itemTime", 69);
-
+        
+        
         playerGold = PlayerPrefs.GetInt("PlayerGold");
      
 	}
@@ -50,14 +52,25 @@ public class BuyItem : MonoBehaviour {
                         print("AFTER: " + itemTime.ToString());
                     }
 
-                    printTime.itmTime = itemTime;
-                    printTime.itemName = itemName;
-                    printTime.iprintna();
-                
+
+                    if (itemName == "Boost") {
+                        printTimeBoost = _printTime.GetComponent<PrintTimeBoost>();
+                        printTimeBoost.itmTime = itemTime;
+                        printTimeBoost.itemName = itemName;
+                        printTimeBoost.iprintna();
+                    }
+                    else if (itemName == "Attack")
+                    {
+                        printTimeAttack = _printTime.GetComponent<PrintTimeAttack>();
+                        printTimeAttack.itmTime = itemTime;
+                        printTimeAttack.itemName = itemName;
+                        printTimeAttack.iprintna();
+                    }
        
                 //decrease price from gold
                 PlayerPrefs.SetInt("PlayerGold", PlayerPrefs.GetInt("PlayerGold") - itemPrice);
                 //curGold.text = PlayerPrefs.GetInt("PlayerGold").ToString();
+                pGold = GameObject.Find("PlayerGold").GetComponent<PlayerGold>();
                 pGold.playerGold = PlayerPrefs.GetInt("PlayerGold");
                 PlayerPrefs.Save();
                 }

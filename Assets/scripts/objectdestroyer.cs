@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System;
+using UnityEditor.SceneManagement;
 
 public class objectdestroyer : MonoBehaviour {
 
@@ -10,7 +11,7 @@ public class objectdestroyer : MonoBehaviour {
     shieldToggle shieldToggleScript;
 	void Start () {
         btnShieldObj = GameObject.Find("btnShield");
-        shieldToggleScript = btnShieldObj.GetComponent<shieldToggle>();
+        if (EditorSceneManager.GetActiveScene().name == "Game" ) shieldToggleScript = btnShieldObj.GetComponent<shieldToggle>();
 	}
 	
 	// Update is called once per frame
