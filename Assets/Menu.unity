@@ -7579,7 +7579,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timerShield: {fileID: 332621397}
-  itemName: 
+  itemName: Shield
   itmTime: 0
 --- !u!224 &1093455257
 RectTransform:
@@ -10496,7 +10496,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1546417258
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11728,7 +11728,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timerAttack: {fileID: 259894307}
-  itemName: 
+  itemName: Attack
   itmTime: 0
 --- !u!1 &1718388489
 GameObject:
@@ -12429,7 +12429,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timerBoost: {fileID: 1051768551}
-  itemName: 
+  itemName: Boost
   itmTime: 0
 --- !u!4 &1851319070
 Transform:
