@@ -15,6 +15,7 @@ TagManager:
   - CollectiblesShield
   - PowerAttack
   - CollectiblesAttack
+  - timePrinters
   layers:
   - Default
   - TransparentFX

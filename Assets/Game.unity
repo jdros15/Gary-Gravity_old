@@ -158,6 +158,7 @@ GameObject:
   - 114: {fileID: 83904297}
   - 114: {fileID: 83904296}
   - 114: {fileID: 83904307}
+  - 114: {fileID: 83904308}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -367,6 +368,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 71782c840576afa4c83371b4fa52f977, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &83904308
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 83904295}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b039abbf73d494f4bba8f70040443435, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &98055744
@@ -1317,6 +1329,49 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 359022063}
+--- !u!1 &365285953
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 365285955}
+  - 114: {fileID: 365285954}
+  m_Layer: 0
+  m_Name: tagChanger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &365285954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 365285953}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a568981913df9e64bb9d93a7a0ea1590, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectTargetName: timePrinters
+  newTag: Untagged
+  automatic: 1
+--- !u!4 &365285955
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 365285953}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 369.90817, y: 338.58673, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 13
 --- !u!1 &374233931
 GameObject:
   m_ObjectHideFlags: 0

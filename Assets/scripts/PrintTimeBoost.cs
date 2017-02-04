@@ -85,7 +85,8 @@ public class PrintTimeBoost : MonoBehaviour
         if (secsLeftBoost <= 0)
         {
             timerBoost.text = "0 boost";
-          
+            PlayerPrefs.DeleteKey("endTime" + itemName);
+            
         }
         else if (secsLeftBoost <= 60)
         {

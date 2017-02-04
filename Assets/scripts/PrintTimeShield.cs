@@ -85,7 +85,7 @@ public class PrintTimeShield : MonoBehaviour
         if (secsLeftShield <= 0)
         {
             timerShield.text = "0 shield";
-          
+            PlayerPrefs.DeleteKey("endTime" + itemName);
         }
         else if (secsLeftShield <= 60)
         {

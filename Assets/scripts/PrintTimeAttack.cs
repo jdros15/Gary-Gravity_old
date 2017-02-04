@@ -85,7 +85,7 @@ public class PrintTimeAttack : MonoBehaviour
         if (secsLeftAttack <= 0)
         {
             timerAttack.text = "0 attack";
-          
+            PlayerPrefs.DeleteKey("endTime" + itemName);
         }
         else if (secsLeftAttack <= 60)
         {
