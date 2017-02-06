@@ -7722,7 +7722,7 @@ GameObject:
   - 114: {fileID: 1146056895}
   m_Layer: 0
   m_Name: timePrinters
-  m_TagString: Untagged
+  m_TagString: timePrinters
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8429,7 +8429,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1298995707
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8441,8 +8441,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e0740bf23353a948bad749241c18633, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objDestroyable:
-  - {fileID: 1146056893}
+  objDestroyable: {fileID: 0}
 --- !u!4 &1298995708
 Transform:
   m_ObjectHideFlags: 0

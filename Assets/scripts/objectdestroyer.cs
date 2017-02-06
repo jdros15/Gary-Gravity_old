@@ -21,23 +21,8 @@ public class objectdestroyer : MonoBehaviour {
 
     void OnTriggerEnter(Collider obj)
     {
-       /* if (obj.gameObject.tag == "Foreground" || obj.tag == "Obstacles")
-        {
-            Destroy(obj.gameObject);
-            if (isDestroyer == false)
-            {
-                try
-                { Instantiate(explosion, transform.position, transform.rotation); }
-                catch (Exception e) { }
-                shieldToggleScript.deactivateShield();
-                if (gameObject.tag == "PowerAttack")
-                {
-                    Destroy(gameObject);
-                }
-            }
-        }*/
 
-        if (isDestroyer && (obj.tag == "Foreground" || obj.tag == "Obstacles"))
+     /*   if (isDestroyer && (obj.tag == "Foreground" || obj.tag == "Obstacles"))
         {
              Destroy(obj.gameObject);
         }
@@ -54,6 +39,35 @@ public class objectdestroyer : MonoBehaviour {
                 {
                     Destroy(gameObject);
                 }
+                Destroy(obj.gameObject);
+            }
+           
+        } */
+
+        if (isDestroyer && (obj.tag == "Foreground" || obj.tag == "Obstacles"))
+        {
+            Destroy(obj.gameObject);
+        }
+        else if(obj.tag == "Obstacles")
+        {
+            if (gameObject.name == "playerShield")
+            {
+                try
+                { Instantiate(explosion, transform.position, transform.rotation); }
+                catch (Exception e) { }
+                shieldToggleScript.deactivateShield();
+                Destroy(obj.gameObject);
+                GameObject objSfxDestByShield = GameObject.Find("sfxDestroyedByShield");
+                AudioSource asSfxDestByShield = objSfxDestByShield.GetComponent<AudioSource>();
+                asSfxDestByShield.Play();
+                GameObject player = GameObject.FindGameObjectWithTag("Player");
+                BoxCollider colPlayer = player.GetComponent<BoxCollider>();
+                colPlayer.enabled=false;
+             
+            }
+            else if (gameObject.tag == "PowerAttack")
+            {
+                Destroy(gameObject);
                 Destroy(obj.gameObject);
             }
            

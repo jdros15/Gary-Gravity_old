@@ -28,7 +28,7 @@ public class MusicPlayer : MonoBehaviour {
         if (!loopMusic.isPlaying)
         {
             introMusic.Play();
-            Invoke("PlayMusic", 12);
+            loopMusic.PlayDelayed(12);
          
         }
 
@@ -38,8 +38,5 @@ public class MusicPlayer : MonoBehaviour {
 	void Update () {
      
 	}
-    void PlayMusic()
-    {
-        loopMusic.Play();
-    }
+   
 }

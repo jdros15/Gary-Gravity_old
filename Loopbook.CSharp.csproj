@@ -220,6 +220,7 @@
     <Compile Include="Assets\scripts\RateApp.cs" />
     <Compile Include="Assets\scripts\RdmObjGen.cs" />
     <Compile Include="Assets\scripts\ScrollRectSnap_CS.cs" />
+    <Compile Include="Assets\scripts\SfxPlayer.cs" />
     <Compile Include="Assets\scripts\StarterChecker.cs" />
     <Compile Include="Assets\scripts\StartingPlayerPrefs.cs" />
     <Compile Include="Assets\scripts\SwipeInput.cs" />

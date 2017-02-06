@@ -19,6 +19,7 @@ public class playerCollide : MonoBehaviour {
     RdmObjGen rdmobj;
     bool invokeCollectiblesOnce = false;
     Animation anim;
+    SfxPlayer sfxScript;
 
 
 	void Start () {
@@ -101,6 +102,13 @@ public class playerCollide : MonoBehaviour {
           btnPause.SetActive(false);
           cam.SendMessage("TurnBlurOn");
           ui.SetActive(false);
+
+          GameObject objSfxGameOver = GameObject.Find("sfxGameOver");
+          AudioSource asSfxGameOver = objSfxGameOver.GetComponent<AudioSource>();
+          asSfxGameOver.Play();
+          BoxCollider colPlayer = GetComponent<BoxCollider>();
+          colPlayer.enabled = false;
+
         }
 
         if (playerCollider.gameObject.tag == "CollectiblesCap")
@@ -141,7 +149,10 @@ public class playerCollide : MonoBehaviour {
             rdmobj.stopAttackNow = true;
             btnAttack.interactable = true;
             Destroy(playerCollider.gameObject);
-            
+
+            GameObject objSfxAttack = GameObject.Find("sfxCollectAttack");
+            sfxScript = objSfxAttack.GetComponent<SfxPlayer>();
+            sfxScript.playSfx();
         }
     }
 
