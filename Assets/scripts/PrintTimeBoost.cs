@@ -4,6 +4,7 @@ using System;
 using UnityEngine.UI;
 using System.Collections.Generic;
 using UnityEngine.Analytics;
+using UnityEngine.SceneManagement;
 
 public class PrintTimeBoost : MonoBehaviour
 {
@@ -84,14 +85,14 @@ public class PrintTimeBoost : MonoBehaviour
 
         if (secsLeftBoost <= 0)
         {
-            timerBoost.text = "0 boost";
+          if(SceneManager.GetActiveScene().name == "Menu")  timerBoost.text = "0 boost";
             PlayerPrefs.DeleteKey("endTime" + itemName);
             
         }
         else if (secsLeftBoost <= 60)
         {
             string secsLeftBoostStr = secsLeftBoost.ToString().Substring(0,2);
-            if (secsLeftBoost >= 10) timerBoost.text = "00:00:" + secsLeftBoostStr;
+            if (secsLeftBoost >= 10 && SceneManager.GetActiveScene().name == "Menu") timerBoost.text = "00:00:" + secsLeftBoostStr;
             else
             {
                 secsLeftBoostStr = secsLeftBoost.ToString().Substring(0,1);
@@ -100,7 +101,7 @@ public class PrintTimeBoost : MonoBehaviour
         }
         else
         {
-            timerBoost.text = output;
+            if (SceneManager.GetActiveScene().name == "Menu") timerBoost.text = output;
         }
 
        

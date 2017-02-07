@@ -4,6 +4,7 @@ using System;
 using UnityEngine.UI;
 using System.Collections.Generic;
 using UnityEngine.Analytics;
+using UnityEngine.SceneManagement;
 
 public class PrintTimeShield : MonoBehaviour
 {
@@ -84,22 +85,22 @@ public class PrintTimeShield : MonoBehaviour
 
         if (secsLeftShield <= 0)
         {
-            timerShield.text = "0 shield";
+            if (SceneManager.GetActiveScene().name == "Menu") timerShield.text = "0 shield";
             PlayerPrefs.DeleteKey("endTime" + itemName);
         }
         else if (secsLeftShield <= 60)
         {
             string secsLeftShieldStr = secsLeftShield.ToString().Substring(0,2);
-            if (secsLeftShield >= 10) timerShield.text = "00:00:" + secsLeftShieldStr;
+            if (secsLeftShield >= 10 && SceneManager.GetActiveScene().name == "Menu") timerShield.text = "00:00:" + secsLeftShieldStr;
             else
             {
                 secsLeftShieldStr = secsLeftShield.ToString().Substring(0,1);
-                timerShield.text = "00:00:0" + secsLeftShieldStr;
+                if (SceneManager.GetActiveScene().name == "Menu") timerShield.text = "00:00:0" + secsLeftShieldStr;
             }
         }
         else
         {
-            timerShield.text = output;
+            if (SceneManager.GetActiveScene().name == "Menu") timerShield.text = output;
         }
 
        

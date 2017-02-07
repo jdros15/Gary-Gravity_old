@@ -4,6 +4,7 @@ using System;
 using UnityEngine.UI;
 using System.Collections.Generic;
 using UnityEngine.Analytics;
+using UnityEngine.SceneManagement;
 
 public class PrintTimeAttack : MonoBehaviour
 {
@@ -84,22 +85,22 @@ public class PrintTimeAttack : MonoBehaviour
 
         if (secsLeftAttack <= 0)
         {
-            timerAttack.text = "0 attack";
+           if(SceneManager.GetActiveScene().name == "Menu") timerAttack.text = "0 attack";
             PlayerPrefs.DeleteKey("endTime" + itemName);
         }
         else if (secsLeftAttack <= 60)
         {
             string secsLeftAttackStr = secsLeftAttack.ToString().Substring(0,2);
-            if (secsLeftAttack >= 10) timerAttack.text = "00:00:" + secsLeftAttackStr;
+            if (secsLeftAttack >= 10 && SceneManager.GetActiveScene().name == "Menu") timerAttack.text = "00:00:" + secsLeftAttackStr;
             else
             {
                 secsLeftAttackStr = secsLeftAttack.ToString().Substring(0,1);
-                timerAttack.text = "00:00:0" + secsLeftAttackStr;
+                if (SceneManager.GetActiveScene().name == "Menu") timerAttack.text = "00:00:0" + secsLeftAttackStr;
             }
         }
         else
         {
-            timerAttack.text = output;
+            if (SceneManager.GetActiveScene().name == "Menu") timerAttack.text = output;
         }
 
        
