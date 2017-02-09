@@ -9,8 +9,9 @@ using UnityEngine.SceneManagement;
 public class PrintTimeBoost : MonoBehaviour
 {
 
-
+    Camera maincam;
     DateTime currentDate;
+    DateChecker dateCheckerScript;
     DateTime oldDate;
     public Text timerBoost;
     public string itemName;
@@ -18,10 +19,13 @@ public class PrintTimeBoost : MonoBehaviour
     DateTime endTime,curTime;
     public double itmTime;
     long temp;
+
+ 
+
     void Start()
     {
-
-
+        maincam = Camera.main;
+        dateCheckerScript = maincam.gameObject.GetComponent<DateChecker>();
         
         //Store the current time when it starts
         currentDate = System.DateTime.Now;
@@ -48,9 +52,11 @@ public class PrintTimeBoost : MonoBehaviour
          oldDate = DateTime.FromBinary(temp);
         print("oldDate: " + oldDate);
 
+        
+
         //Use the Subtract method and store the result as a timespan variable
         TimeSpan difference = currentDate.Subtract(oldDate);
-        print("Difference: " + difference);
+    //    print("Difference: " + difference);
         //check if timeleft is present
         if (PlayerPrefs.HasKey("timeLeft"))
         {
@@ -65,11 +71,18 @@ public class PrintTimeBoost : MonoBehaviour
         {
             string dT = PlayerPrefs.GetString("endTime"+itemName);
             endTime = Convert.ToDateTime(dT);
-         //   print(endTimeBoost);
-
+            print("ENDTIME: "+endTime);
+            expirationChecker();
         }
     }
-   
+
+    void expirationChecker()
+    {
+        dateCheckerScript.datevalue1 = endTime;
+        dateCheckerScript.itemName = itemName;
+        dateCheckerScript.expiryCheck();
+    }
+
     void Update()
     {
        
@@ -77,7 +90,9 @@ public class PrintTimeBoost : MonoBehaviour
         timeLeftBoost = endTime - curTime;
         var secsLeftBoost = timeLeftBoost.TotalSeconds;
 
-      //  print("Total Hours: " + secsLeftBoost.ToString());
+
+        
+        print("Total Hours: " + secsLeftBoost.ToString());
 
         string output = String.Format("{0:D2}:{1:D2}:{2:D2}", timeLeftBoost.Hours, timeLeftBoost.Minutes, timeLeftBoost.Seconds);
 
@@ -111,21 +126,29 @@ public class PrintTimeBoost : MonoBehaviour
         //Save the current system time as a string in the player prefs class
         PlayerPrefs.SetString("sysString", System.DateTime.Now.ToBinary().ToString());
        
-        print("Saving this date to prefs: " + System.DateTime.Now);
+     //   print("Saving this date to prefs: " + System.DateTime.Now);
         
     }
 
     public void iprintna()
     {
 
-      Debug.Log(itmTime);
-      TimeSpan time1 = TimeSpan.FromMinutes(itmTime);
+  //    Debug.Log(itmTime);
+   /*   TimeSpan time1 = TimeSpan.FromMinutes(itmTime);
       TimeSpan time2 = oldDate.TimeOfDay;
       TimeSpan ts1 = DateTime.Now.TimeOfDay;
-      var ts2 = ts1.Add(time1);
-      string op = String.Format("{0:D2}:{1:D2}:{2:D2}", ts2.Hours, ts2.Minutes,ts2.Seconds);
-      PlayerPrefs.SetString("endTime"+itemName, op);
-      print("OPPA: "+op);
+      var ts2 = ts1.Add(time1); */
+
+        System.DateTime today = System.DateTime.Now;
+        System.TimeSpan duration = new System.TimeSpan(0, 0, Convert.ToInt32(itmTime), 0);
+        System.DateTime result = today.Add(duration);
+
+
+      print("RESULT: " + result.ToString()); 
+  //    string op = String.Format("{0:D2}:{1:D2}:{2:D2}",result);
+        
+      PlayerPrefs.SetString("endTime"+itemName, result.ToString());
+    //  print("OPPA: "+op);
       
       refreshTime();
         }

@@ -389,6 +389,21 @@ Prefab:
       propertyPath: timerBoost
       value: 
       objectReference: {fileID: 1051768551}
+    - target: {fileID: 114000013019873204, guid: f4988a6b64d63a64bbe2a402c7a80b5c,
+        type: 2}
+      propertyPath: itemName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000011943655088, guid: f4988a6b64d63a64bbe2a402c7a80b5c,
+        type: 2}
+      propertyPath: itemName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000012876647332, guid: f4988a6b64d63a64bbe2a402c7a80b5c,
+        type: 2}
+      propertyPath: itemName
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f4988a6b64d63a64bbe2a402c7a80b5c, type: 2}
   m_IsPrefabParent: 0
@@ -10525,7 +10540,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1546417258
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10918,6 +10933,7 @@ GameObject:
   - 92: {fileID: 1606129259}
   - 124: {fileID: 1606129258}
   - 81: {fileID: 1606129257}
+  - 114: {fileID: 1606129256}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -10925,6 +10941,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1606129256
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1606129255}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb492216158dbd14a85c46279f2b54fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemName: 
 --- !u!81 &1606129257
 AudioListener:
   m_ObjectHideFlags: 0

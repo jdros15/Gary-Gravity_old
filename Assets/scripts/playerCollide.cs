@@ -56,7 +56,7 @@ public class playerCollide : MonoBehaviour {
            
             CancelInvoke("regenBoostInvoked");
             rdmobj.stopBoostNow = false;
-            print("boost resumed");
+         //   print("boost resumed");
             if (!invokeCollectiblesOnce)
             {
                 rdmobj.invokeCollectibles = true;

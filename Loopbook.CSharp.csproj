@@ -201,6 +201,7 @@
     <Compile Include="Assets\scripts\ChangeScene.cs" />
     <Compile Include="Assets\scripts\CharGen.cs" />
     <Compile Include="Assets\scripts\ChooseCharacter.cs" />
+    <Compile Include="Assets\scripts\DateChecker.cs" />
     <Compile Include="Assets\scripts\DestroyOnLoad.cs" />
     <Compile Include="Assets\scripts\DontDestroyOnLoad.cs" />
     <Compile Include="Assets\scripts\FgGen.cs" />
