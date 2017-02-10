@@ -81,6 +81,7 @@ public class BuyItem : MonoBehaviour {
                 pGold = GameObject.Find("PlayerGold").GetComponent<PlayerGold>();
                 pGold.playerGold = PlayerPrefs.GetInt("PlayerGold");
                 PlayerPrefs.Save();
+          
                 }
             }
             else
