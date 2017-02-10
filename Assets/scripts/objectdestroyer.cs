@@ -66,6 +66,10 @@ public class objectdestroyer : MonoBehaviour {
             }
             else if (gameObject.tag == "PowerAttack")
             {
+                GameObject objSfxDestByAttack = GameObject.Find("sfxDestroyedByAttack");
+                AudioSource asSfxDestByAttack = objSfxDestByAttack.GetComponent<AudioSource>();
+                asSfxDestByAttack.Play();
+
                 Destroy(gameObject);
                 Destroy(obj.gameObject);
             }

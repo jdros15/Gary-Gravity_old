@@ -119,6 +119,10 @@ public class playerCollide : MonoBehaviour {
             healthbarSlider.value = healthbarSlider.maxValue;
             Destroy(playerCollider.gameObject);
             print("cap collided");
+
+            GameObject objSfxCap = GameObject.Find("sfxCollectSwipe");
+            sfxScript = objSfxCap.GetComponent<SfxPlayer>();
+            sfxScript.playSfx();
         }
 
         if (playerCollider.gameObject.tag == "CollectiblesBoost")
@@ -129,6 +133,9 @@ public class playerCollide : MonoBehaviour {
             rdmobj.stopBoostNow = true;
             Destroy(playerCollider.gameObject);
 
+            GameObject objSfxBoost = GameObject.Find("sfxCollectBoost");
+            sfxScript = objSfxBoost.GetComponent<SfxPlayer>();
+            sfxScript.playSfx();
         }
 
         if (playerCollider.gameObject.tag == "CollectiblesShield")
@@ -136,11 +143,12 @@ public class playerCollide : MonoBehaviour {
             // collectible shield
 
             btnShield.interactable = true;
-
-
             rdmobj.stopShieldNow = true;
             Destroy(playerCollider.gameObject);
 
+            GameObject objSfxShield = GameObject.Find("sfxCollectShield");
+            sfxScript = objSfxShield.GetComponent<SfxPlayer>();
+            sfxScript.playSfx();
         }
 
         if (playerCollider.gameObject.tag == "CollectiblesAttack")
