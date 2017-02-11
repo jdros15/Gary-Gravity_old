@@ -170,16 +170,22 @@ public class playerCollide : MonoBehaviour {
         swipeScript = maincam.gameObject.GetComponent<SwipeMovement>();
         swipeScript.targetPosition = boostLane.transform.position;
         Time.timeScale = 4f;
-        btnPause.GetComponent<Button>().interactable = false;
         rdmobj.stopBoostNow = true;
         InvokeRepeating("decBoost", 4, 4);
+
+        // disable buttons
+        btnPause.GetComponent<Button>().interactable = false;
+        btnBoost.GetComponent<Button>().enabled = false;
+        btnShield.GetComponent<Button>().enabled = false;
+        btnAttack.GetComponent<Button>().enabled = false;
+
+
     }
 
     void Unboost()
     {
         swipeScript = maincam.gameObject.GetComponent<SwipeMovement>();
         swipeScript.currentLane = "Lane2";
-        btnPause.GetComponent<Button>().interactable = true;
         anim.CrossFade("shopper_idle_anim_001");
         swipeScript.targetPosition = swipeScript.target2.transform.position;
         Time.timeScale = 1f;
@@ -204,6 +210,11 @@ public class playerCollide : MonoBehaviour {
             Destroy(obboost);
         }
 
+        //enable buttons
+        btnPause.GetComponent<Button>().interactable = true;
+        btnBoost.GetComponent<Button>().enabled = true;
+        btnShield.GetComponent<Button>().enabled = true;
+        btnAttack.GetComponent<Button>().enabled = true;
        
     }
 

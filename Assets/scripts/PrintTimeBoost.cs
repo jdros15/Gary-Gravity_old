@@ -135,22 +135,14 @@ public class PrintTimeBoost : MonoBehaviour
     public void iprintna()
     {
 
-  //    Debug.Log(itmTime);
-   /*   TimeSpan time1 = TimeSpan.FromMinutes(itmTime);
-      TimeSpan time2 = oldDate.TimeOfDay;
-      TimeSpan ts1 = DateTime.Now.TimeOfDay;
-      var ts2 = ts1.Add(time1); */
+
 
         System.DateTime today = System.DateTime.Now;
         System.TimeSpan duration = new System.TimeSpan(0, 0, Convert.ToInt32(itmTime), 0);
         System.DateTime result = today.Add(duration);
 
-
-      print("RESULT: " + result.ToString()); 
-  //    string op = String.Format("{0:D2}:{1:D2}:{2:D2}",result);
         
       PlayerPrefs.SetString("endTimeBoost", result.ToString());
-    //  print("OPPA: "+op);
       
       refreshTime();
         }

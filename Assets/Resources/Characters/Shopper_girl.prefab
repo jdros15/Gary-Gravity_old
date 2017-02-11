@@ -129,7 +129,6 @@ GameObject:
   - 4: {fileID: 4000010593764292}
   - 54: {fileID: 54000010443196348}
   - 114: {fileID: 114000010776224626}
-  - 114: {fileID: 114000010452456322}
   - 143: {fileID: 143000010575767144}
   m_Layer: 0
   m_Name: Shopper_girl
@@ -2272,18 +2271,6 @@ MonoBehaviour:
   explosion: {fileID: 1000011342568714, guid: 666bdde2f3dc86340a213a957cb6465d, type: 2}
   btnShieldObj: {fileID: 0}
   isDestroyer: 0
---- !u!114 &114000010452456322
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000010686695526}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e47a6cfb8c6c31642b40c9396a9ce275, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MoveSpeed: 2
 --- !u!114 &114000010776224626
 MonoBehaviour:
   m_ObjectHideFlags: 1

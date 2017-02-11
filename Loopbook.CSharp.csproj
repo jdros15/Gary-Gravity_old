@@ -235,6 +235,7 @@
     <Compile Include="Assets\scripts\camdescend.cs" />
     <Compile Include="Assets\scripts\capBar.cs" />
     <Compile Include="Assets\scripts\exit.cs" />
+    <Compile Include="Assets\scripts\goldsForTesting.cs" />
     <Compile Include="Assets\scripts\loadALevel.cs" />
     <Compile Include="Assets\scripts\moveTowards.cs" />
     <Compile Include="Assets\scripts\noSleep.cs" />

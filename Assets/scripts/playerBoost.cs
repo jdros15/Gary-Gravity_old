@@ -29,6 +29,8 @@ public class playerBoost : MonoBehaviour {
         Button btnBoost = gameObject.GetComponent<Button>();
         btnBoost.interactable = false;
         pCollideScript.startBoost();
+
+
         
     }
 
