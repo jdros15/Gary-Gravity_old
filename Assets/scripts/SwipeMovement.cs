@@ -23,13 +23,14 @@ public class SwipeMovement : MonoBehaviour {
 		currentLane = "Lane2";
 		targetPosition = target2.transform.position;
         moveUp = true;
-       
+
 	}
 	
 	// Update is called once per frame
 
 
 	void Update() {
+
         character = GameObject.FindGameObjectWithTag("character");
         anim = character.GetComponent<Animation>();
         protag = GameObject.FindGameObjectWithTag("Player");
@@ -38,34 +39,23 @@ public class SwipeMovement : MonoBehaviour {
         tornadoSprite = tornadoSide.GetComponent<SpriteRenderer>();
         tornadoSprite2 = tornadoSide2.GetComponent<SpriteRenderer>();
 
-       // protag.transform.rotation = Quaternion.AngleAxis(rotateQuat, Vector3.up);
 		if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Moved) {
 			// Get movement of the finger since last frame
 			Vector2 touchDeltaPosition = Input.GetTouch(0).deltaPosition;
 
 			// Move object across XY plane
-			//transform.Translate(-touchDeltaPosition.x * speed, -touchDeltaPosition.y * speed, 0);
+
 			if (touchDeltaPosition.x > 1 && swipeCap >=1 && Time.timeScale == 1f)
 			{
 				//SwipeRight
-
-               // protag.transform.Translate(Vector3.forward * Time.deltaTime);
-                
-              /* GameObject player = GameObject.Find("Shopper_girl(Clone)");
-                player.GetComponent<Animation>().CrossFade("ArmatureAction"); */
                 if (currentLane == "Lane2" && protag.GetComponent<Rigidbody>().velocity == Vector3.zero)
                 {
-				//	currentLane = "Lane3";
 				 	targetPosition = target3.transform.position; 
-               //    setSwipeCap();
 				}
                 if (currentLane == "Lane1" && protag.GetComponent<Rigidbody>().velocity == Vector3.zero)
             {
-				//	currentLane = "Lane2";
 			        targetPosition = target2.transform.position;
-                //    setSwipeCap();
 				}     
-             //   moveUp = false;
                 anim.Play("shopper_girl_moveRight");
                 tornadoSprite2.enabled = true;
             }
@@ -85,12 +75,9 @@ public class SwipeMovement : MonoBehaviour {
 					targetPosition = target2.transform.position;
                  //  setSwipeCap();
 				}
-                //anim.CrossFade("shopper_girl_moveLeft");
                 anim.Play("shopper_girl_moveLeft");
                 tornadoSprite.enabled = true;
-              
-               
-           //   moveUp = false; 
+             
 			}
             Invoke("disableTornadoSprite", 0.5f);
 		}
@@ -98,8 +85,7 @@ public class SwipeMovement : MonoBehaviour {
    
 
         MovePlayer();
-        //    MoveTowardsTarget();
-        
+
 	}
 
     void disableTornadoSprite(){
