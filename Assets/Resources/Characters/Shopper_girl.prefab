@@ -130,6 +130,7 @@ GameObject:
   - 54: {fileID: 54000010443196348}
   - 114: {fileID: 114000010776224626}
   - 143: {fileID: 143000010575767144}
+  - 114: {fileID: 114000010941261768}
   m_Layer: 0
   m_Name: Shopper_girl
   m_TagString: Player
@@ -2292,6 +2293,18 @@ MonoBehaviour:
   deadZone: 0.1
   sideSpeed: 0
   controller: {fileID: 143000010575767144}
+--- !u!114 &114000010941261768
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010686695526}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e47a6cfb8c6c31642b40c9396a9ce275, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MoveSpeed: 3
 --- !u!114 &114000012185165718
 MonoBehaviour:
   m_ObjectHideFlags: 1
