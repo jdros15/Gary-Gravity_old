@@ -37,7 +37,7 @@ public class SwipeMovement : MonoBehaviour {
         GameObject tornadoSide = GameObject.Find("bag tornado side moveLeft");
         GameObject tornadoSide2 = GameObject.Find("bag tornado side moveRight");
         tornadoSprite = tornadoSide.GetComponent<SpriteRenderer>();
-        tornadoSprite2 = tornadoSide2.GetComponent<SpriteRenderer>();
+       tornadoSprite2 = tornadoSide2.GetComponent<SpriteRenderer>();
 
 		if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Moved) {
 			// Get movement of the finger since last frame
@@ -58,6 +58,9 @@ public class SwipeMovement : MonoBehaviour {
 				}     
                 anim.Play("shopper_girl_moveRight");
                 tornadoSprite2.enabled = true;
+                GameObject objSfxSwipe = GameObject.Find("sfxSwipeShopper_girl");
+                AudioSource asSfxSwipe = objSfxSwipe.GetComponent<AudioSource>();
+                asSfxSwipe.Play();
             }
             else if (touchDeltaPosition.x < -1 && swipeCap >= 1 && Time.timeScale == 1f)
 			{
@@ -77,9 +80,12 @@ public class SwipeMovement : MonoBehaviour {
 				}
                 anim.Play("shopper_girl_moveLeft");
                 tornadoSprite.enabled = true;
-             
+                GameObject objSfxSwipe = GameObject.Find("sfxSwipeShopper_girl");
+                AudioSource asSfxSwipe = objSfxSwipe.GetComponent<AudioSource>();
+                asSfxSwipe.Play();
 			}
             Invoke("disableTornadoSprite", 0.5f);
+          
 		}
 
    
