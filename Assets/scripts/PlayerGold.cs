@@ -4,7 +4,6 @@ using UnityEngine.UI;
 
 public class PlayerGold : MonoBehaviour {
     public int playerGold,injGold;
-    public Test Iap;
 	// Use this for initialization
 	void Start () {
 	//check if gold key exists

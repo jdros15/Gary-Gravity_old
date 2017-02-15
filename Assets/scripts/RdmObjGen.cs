@@ -28,7 +28,11 @@ public class RdmObjGen : MonoBehaviour {
 
         }
 
-        if (stopBoostNow) Destroy(GameObject.FindGameObjectWithTag("CollectiblesBoost"));
+        if (stopBoostNow)
+        {
+            Destroy(GameObject.FindGameObjectWithTag("CollectiblesBoost"));
+            print("boost stopped");
+        }
         if (stopShieldNow) Destroy(GameObject.FindGameObjectWithTag("CollectiblesShield"));
         if (stopAttackNow) Destroy(GameObject.FindGameObjectWithTag("CollectiblesAttack"));
         }

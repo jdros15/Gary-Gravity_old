@@ -1,12 +1,11 @@
 ﻿<Properties StartupItem="Loopbook.CSharp.Plugins.csproj" RefactoringSettings.EnableRefactorings="True">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\scripts\playerCollide.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\scripts\pShield.cs">
     <Files>
-      <File FileName="Assets\scripts\SwipeMovement.cs" Line="1" Column="1" />
+      <File FileName="Assets\scripts\SwipeMovement.cs" Line="76" Column="5" />
       <File FileName="Assets\scripts\BlurToggle.cs" Line="1" Column="1" />
       <File FileName="Assets\scripts\PlayerSpawn.cs" Line="1" Column="1" />
       <File FileName="Assets\scripts\pShield.cs" Line="1" Column="1" />
-      <File FileName="Assets\scripts\playerCollide.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

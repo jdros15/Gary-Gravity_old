@@ -37,7 +37,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 966661421}
-  m_IndirectSpecularColor: {r: 0.2961545, g: 0.2460719, b: 0.23122758, a: 1}
+  m_IndirectSpecularColor: {r: 0.29641894, g: 0.24589941, b: 0.23150435, a: 1}
 --- !u!157 &4
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -3542,7 +3542,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 104242, guid: f77bdeb5ef0a8904e81ff370b1a502c2, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 11423446, guid: f77bdeb5ef0a8904e81ff370b1a502c2, type: 2}
       propertyPath: m_PreserveAspect
@@ -5989,7 +5989,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerGold: 0
   injGold: 0
-  Iap: {fileID: 0}
 --- !u!4 &814398490
 Transform:
   m_ObjectHideFlags: 0
@@ -7742,7 +7741,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerGold: 0
   injGold: 0
-  Iap: {fileID: 1432273521}
 --- !u!1 &1155385645
 GameObject:
   m_ObjectHideFlags: 0
@@ -10550,7 +10548,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1546417258
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10594,7 +10592,6 @@ GameObject:
   - 224: {fileID: 1556258551}
   - 222: {fileID: 1556258556}
   - 114: {fileID: 1556258555}
-  - 114: {fileID: 1556258554}
   - 114: {fileID: 1556258552}
   m_Layer: 5
   m_Name: button
@@ -10623,17 +10620,6 @@ RectTransform:
   m_SizeDelta: {x: 87, y: 37}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1556258552
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1556258550}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f12a62258dc0b3d4db65e03d1a252e78, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1556258554
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -10671,18 +10657,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1556258555}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1556258552}
-        m_MethodName: goldpack1
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1556258555
@@ -12024,7 +11999,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerGold: 0
   injGold: 0
-  Iap: {fileID: 1432273521}
 --- !u!222 &1753319836
 CanvasRenderer:
   m_ObjectHideFlags: 0
