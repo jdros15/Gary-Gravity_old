@@ -9,8 +9,7 @@ public class objectdestroyer : MonoBehaviour {
     public Boolean isDestroyer = false;
     shieldToggle shieldToggleScript;
 	void Start () {
-        btnShieldObj = GameObject.Find("btnShield");
-        if (SceneManager.GetActiveScene().name == "Game" ) shieldToggleScript = btnShieldObj.GetComponent<shieldToggle>();
+        
 	}
 	
 	// Update is called once per frame
@@ -54,6 +53,8 @@ public class objectdestroyer : MonoBehaviour {
                 try
                 { Instantiate(explosion, transform.position, transform.rotation); }
                 catch (Exception e) { }
+                btnShieldObj = GameObject.Find("btnShield");
+                if (SceneManager.GetActiveScene().name == "Game") shieldToggleScript = btnShieldObj.GetComponent<shieldToggle>();
                 shieldToggleScript.deactivateShield();
                 Destroy(obj.gameObject);
                 GameObject objSfxDestByShield = GameObject.Find("sfxDestroyedByShield");

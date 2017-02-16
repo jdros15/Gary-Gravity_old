@@ -111,7 +111,7 @@ public class playerCollide : MonoBehaviour {
 
         }
 
-        if (playerCollider.gameObject.tag == "CollectiblesCap")
+        else if (playerCollider.gameObject.tag == "CollectiblesCap")
         {
             // collectible capacity
             swipeScript = maincam.gameObject.GetComponent<SwipeMovement>();
@@ -125,7 +125,7 @@ public class playerCollide : MonoBehaviour {
             sfxScript.playSfx();
         }
 
-        if (playerCollider.gameObject.tag == "CollectiblesBoost")
+        else if (playerCollider.gameObject.tag == "CollectiblesBoost")
         {
             // collectible boost
 
@@ -138,7 +138,7 @@ public class playerCollide : MonoBehaviour {
             sfxScript.playSfx();
         }
 
-        if (playerCollider.gameObject.tag == "CollectiblesShield")
+        else if (playerCollider.gameObject.tag == "CollectiblesShield")
         {
             // collectible shield
 
@@ -151,7 +151,7 @@ public class playerCollide : MonoBehaviour {
             sfxScript.playSfx();
         }
 
-        if (playerCollider.gameObject.tag == "CollectiblesAttack")
+        else if (playerCollider.gameObject.tag == "CollectiblesAttack")
         {
             // collectible attack
             rdmobj.stopAttackNow = true;
@@ -160,6 +160,18 @@ public class playerCollide : MonoBehaviour {
 
             GameObject objSfxAttack = GameObject.Find("sfxCollectAttack");
             sfxScript = objSfxAttack.GetComponent<SfxPlayer>();
+            sfxScript.playSfx();
+        }
+
+        else if (playerCollider.gameObject.tag == "CollectiblesCoin")
+        {
+            // collectible attack
+            rdmobj.stopAttackNow = true;
+            btnAttack.interactable = true;
+            Destroy(playerCollider.gameObject);
+
+            GameObject objSfxCoin = GameObject.Find("sfxCollectCoin");
+            sfxScript = objSfxCoin.GetComponent<SfxPlayer>();
             sfxScript.playSfx();
         }
     }
