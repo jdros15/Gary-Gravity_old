@@ -24,7 +24,7 @@ public class BuyItem : MonoBehaviour {
       //  gameObject.SendMessage("itemTime", 69);
         
         
-        playerGold = PlayerPrefs.GetInt("PlayerGold");
+       
      
 	}
 	
@@ -35,13 +35,18 @@ public class BuyItem : MonoBehaviour {
 
     public void buyItem()
     {
-        
+        playerGold = PlayerPrefs.GetInt("PlayerGold");
                 //check player gold
             if (playerGold >= itemPrice)
             {
    
-                //check if player has this item already
 
+                //play audio
+                GameObject objSfxPurchasing = GameObject.Find("sfxPurchasing");
+                AudioSource asSfxPuchasing = objSfxPurchasing.GetComponent<AudioSource>();
+                asSfxPuchasing.Play();
+
+                //check if player has this item already
 
                 if (itemTime <= 480)
                 {
@@ -88,6 +93,11 @@ public class BuyItem : MonoBehaviour {
             {
                 //insufficient
                 print("Insufficient Gold");
+
+                //play audio
+                GameObject objSfxInsufficientGold = GameObject.Find("sfxInsufficientGold");
+                AudioSource asSfxInsufficientGold = objSfxInsufficientGold.GetComponent<AudioSource>();
+                asSfxInsufficientGold.Play();
             }
         
        
