@@ -20,6 +20,7 @@ public class playerCollide : MonoBehaviour {
     bool invokeCollectiblesOnce = false;
     Animation anim;
     SfxPlayer sfxScript;
+    int tempGoldCoins, goldCoins;
 
 
 	void Start () {
@@ -42,7 +43,7 @@ public class playerCollide : MonoBehaviour {
         btnShield = GameObject.Find("btnShield").GetComponent<Button>();
         btnAttack = GameObject.Find("btnAttack").GetComponent<Button>();
         btnBoost = GameObject.Find("btnBoost").GetComponent<Button>();
- 
+        PlayerPrefs.DeleteKey("tempGoldCoins");
 	}
 	
 	// Update is called once per frame
@@ -103,12 +104,21 @@ public class playerCollide : MonoBehaviour {
           cam.SendMessage("TurnBlurOn");
           ui.SetActive(false);
 
+
           GameObject objSfxGameOver = GameObject.Find("sfxGameOver");
           AudioSource asSfxGameOver = objSfxGameOver.GetComponent<AudioSource>();
           asSfxGameOver.Play();
           BoxCollider colPlayer = GetComponent<BoxCollider>();
           colPlayer.enabled = false;
 
+            //addcoin from temp
+          if (PlayerPrefs.HasKey("tempGoldCoins"))
+          {
+              tempGoldCoins = PlayerPrefs.GetInt("tempGoldCoins");
+              goldCoins = PlayerPrefs.GetInt("PlayerGold");
+              PlayerPrefs.SetInt("PlayerGold", goldCoins + tempGoldCoins);
+            
+          }
         }
 
         else if (playerCollider.gameObject.tag == "CollectiblesCap")
@@ -173,6 +183,10 @@ public class playerCollide : MonoBehaviour {
             GameObject objSfxCoin = GameObject.Find("sfxCollectCoin");
             sfxScript = objSfxCoin.GetComponent<SfxPlayer>();
             sfxScript.playSfx();
+
+            //addCoin from colleced
+            PlayerPrefs.SetInt("tempGoldCoins", PlayerPrefs.GetInt("tempGoldCoins") + 1);
+
         }
     }
 
