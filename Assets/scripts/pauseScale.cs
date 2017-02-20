@@ -24,7 +24,6 @@ public class pauseScale : MonoBehaviour {
         Time.timeScale = 0f;
 		cam.SendMessage ("TurnBlurOn");
 	 
-
 	}
     public void Playgame()
     {

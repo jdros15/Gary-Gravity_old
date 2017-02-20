@@ -163,7 +163,7 @@ PlayerSettings:
   iOSDeviceRequirements: []
   iOSURLSchemes: []
   AndroidTargetDevice: 0
-  AndroidSplashScreenScale: 0
+  AndroidSplashScreenScale: 2
   androidSplashScreen: {fileID: 2800000, guid: 974d630da04dc594fa9da0bb15ff71aa, type: 3}
   AndroidKeystoreName: C:/Users/LoopbookInc/Documents/Gary-Gravity/loopbookinc.keystore
   AndroidKeyaliasName: gg
