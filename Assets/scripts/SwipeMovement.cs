@@ -13,6 +13,8 @@ public class SwipeMovement : MonoBehaviour {
     SpriteRenderer tornadoSprite, tornadoSprite2;
     Animation anim;
     public float rotateQuat=90;
+   
+
 	// Use this for initialization
 	void Start () {
       
@@ -50,14 +52,26 @@ public class SwipeMovement : MonoBehaviour {
 				//SwipeRight
                 if (currentLane == "Lane2" && protag.GetComponent<Rigidbody>().velocity == Vector3.zero)
                 {
-				 	targetPosition = target3.transform.position; 
+				 	targetPosition = target3.transform.position;
+                    anim.Play("shopper_girl_moveRight");
+                    tornadoSprite2.enabled = true;
+                    GameObject objSfxSwipe = GameObject.Find("sfxSwipeShopper_girl");
+                 AudioSource asSfxSwipe = objSfxSwipe.GetComponent<AudioSource>();
+                 asSfxSwipe.Play();
 				}
                 if (currentLane == "Lane1" && protag.GetComponent<Rigidbody>().velocity == Vector3.zero)
             {
 			        targetPosition = target2.transform.position;
+                    anim.Play("shopper_girl_moveRight");
+                    tornadoSprite2.enabled = true;
+                    GameObject objSfxSwipe = GameObject.Find("sfxSwipeShopper_girl");
+                 AudioSource asSfxSwipe = objSfxSwipe.GetComponent<AudioSource>();
+                 asSfxSwipe.Play();
 				}     
-                anim.Play("shopper_girl_moveRight");
-                tornadoSprite2.enabled = true;
+                
+
+
+
             }
             else if (touchDeltaPosition.x < -1 && swipeCap >= 1 && Time.timeScale == 1f)
 			{
@@ -68,15 +82,24 @@ public class SwipeMovement : MonoBehaviour {
 				//	currentLane = "Lane1";
 					targetPosition = target1.transform.position;
                 //   setSwipeCap();
+                    anim.Play("shopper_girl_moveLeft");
+                    tornadoSprite.enabled = true;
+                     GameObject objSfxSwipe = GameObject.Find("sfxSwipeShopper_girl");
+                 AudioSource asSfxSwipe = objSfxSwipe.GetComponent<AudioSource>();
+                 asSfxSwipe.Play();
 				}
                 if (currentLane == "Lane3" && protag.GetComponent<Rigidbody>().velocity == Vector3.zero)
                 {
 				//	currentLane = "Lane2";
 					targetPosition = target2.transform.position;
                  //  setSwipeCap();
+                    anim.Play("shopper_girl_moveLeft");
+                    tornadoSprite.enabled = true;
+                     GameObject objSfxSwipe = GameObject.Find("sfxSwipeShopper_girl");
+                 AudioSource asSfxSwipe = objSfxSwipe.GetComponent<AudioSource>();
+                 asSfxSwipe.Play();
 				}
-                anim.Play("shopper_girl_moveLeft");
-                tornadoSprite.enabled = true;
+               
              
 			}
             Invoke("disableTornadoSprite", 0.5f);

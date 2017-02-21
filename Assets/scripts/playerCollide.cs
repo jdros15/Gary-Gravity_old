@@ -20,6 +20,7 @@ public class playerCollide : MonoBehaviour {
     bool invokeCollectiblesOnce = false;
     Animation anim;
     SfxPlayer sfxScript;
+    boostMusic boostMusicScript;
     int tempGoldCoins, goldCoins;
 
 
@@ -217,6 +218,7 @@ public class playerCollide : MonoBehaviour {
         Time.timeScale = 1f;
         //destroy all obstacles
         GameObject[] obs = GameObject.FindGameObjectsWithTag("Obstacles");
+
         foreach (GameObject ob in obs)
         {
             Destroy(ob);
@@ -241,6 +243,11 @@ public class playerCollide : MonoBehaviour {
         btnBoost.GetComponent<Button>().enabled = true;
         btnShield.GetComponent<Button>().enabled = true;
         btnAttack.GetComponent<Button>().enabled = true;
+
+        //stop boost music
+        GameObject objboostMusic = GameObject.Find("btnBoost");
+        boostMusicScript = objboostMusic.GetComponent<boostMusic>();
+        boostMusicScript.stopBoostMusic();
        
     }
 
