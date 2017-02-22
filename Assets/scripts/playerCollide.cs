@@ -22,7 +22,8 @@ public class playerCollide : MonoBehaviour {
     SfxPlayer sfxScript;
     boostMusic boostMusicScript;
     int tempGoldCoins, goldCoins;
-
+    highScore hscoreScript;
+    Text colCoins;
 
 	void Start () {
    
@@ -45,6 +46,7 @@ public class playerCollide : MonoBehaviour {
         btnAttack = GameObject.Find("btnAttack").GetComponent<Button>();
         btnBoost = GameObject.Find("btnBoost").GetComponent<Button>();
         PlayerPrefs.DeleteKey("tempGoldCoins");
+        colCoins = GameObject.Find("txtCc").GetComponent<Text>();
 	}
 	
 	// Update is called once per frame
@@ -105,7 +107,11 @@ public class playerCollide : MonoBehaviour {
           cam.SendMessage("TurnBlurOn");
           ui.SetActive(false);
 
+            //highscore
+          hscoreScript = GameObject.Find("GameOver").GetComponent<highScore>();
+          hscoreScript.CheckAndSet();
 
+            //game over sfx
           GameObject objSfxGameOver = GameObject.Find("sfxGameOver");
           AudioSource asSfxGameOver = objSfxGameOver.GetComponent<AudioSource>();
           asSfxGameOver.Play();
@@ -187,6 +193,10 @@ public class playerCollide : MonoBehaviour {
 
             //addCoin from colleced
             PlayerPrefs.SetInt("tempGoldCoins", PlayerPrefs.GetInt("tempGoldCoins") + 1);
+
+            int Cc = int.Parse(colCoins.text);
+            Cc += 1;
+            colCoins.text = Cc.ToString();
 
         }
     }
