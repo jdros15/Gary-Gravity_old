@@ -2753,7 +2753,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 104242, guid: 62129479e4fe33044a03efb506e7922c, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 104242, guid: 62129479e4fe33044a03efb506e7922c, type: 2}
       propertyPath: m_StaticEditorFlags
@@ -5086,7 +5086,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 117498, guid: 9db04975918827647aa712dac7c22f43, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 117498, guid: 9db04975918827647aa712dac7c22f43, type: 2}
       propertyPath: m_StaticEditorFlags
