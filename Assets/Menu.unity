@@ -12086,7 +12086,11 @@ RectTransform:
   m_RootOrder: 1
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
+<<<<<<< HEAD
   m_AnchoredPosition: {x: 2983.9995, y: 0}
+=======
+  m_AnchoredPosition: {x: 2984.0005, y: 0}
+>>>>>>> parent of 3758d75... App rating
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1544516824
